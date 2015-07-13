@@ -1,5 +1,5 @@
 # tweet-downloader
-Simple script for downloading tweets without using the Twitter API. The output is in JSON format.
+Simple script for downloading tweets without using the Twitter API or Selenium. The output is in JSON format.
 
 ### Dependencies
 * Python 2.7+

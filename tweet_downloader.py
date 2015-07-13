@@ -1,3 +1,4 @@
+import os
 import sys
 import time
 import json
@@ -5,7 +6,10 @@ import requests
 import argparse
 import urllib
 
-from tweet_parser import parse_search_results
+# Ugly hack to use twitterwebsearch as git submodule
+TWS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'twitterwebsearch')
+sys.path.append(TWS_DIR)
+from twitterwebsearch.parser import parse_search_results
 
 TWITTER_PROFILE_URL = 'https://twitter.com/{term}'
 TWITTER_PROFILE_MORE_URL = 'https://twitter.com/i/profiles/show/{term}/timeline?include_available_features=1&include_entities=1&max_position={max_position}'

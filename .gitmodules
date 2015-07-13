@@ -1,0 +1,3 @@
+[submodule "twitterwebsearch"]
+	path = twitterwebsearch
+	url = https://github.com/ShinNoNoir/twitterwebsearch.git
