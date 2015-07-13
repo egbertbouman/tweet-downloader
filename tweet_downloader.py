@@ -21,7 +21,6 @@ def find_value(html, key):
 def download_tweets(search=None, profile=None, sleep=1):
     assert search or profile
 
-    tweets = 0
     term = (search or profile)
     url = TWITTER_SEARCH_URL if search else TWITTER_PROFILE_URL
     url_more = TWITTER_SEARCH_MORE_URL if search else TWITTER_PROFILE_MORE_URL
@@ -32,7 +31,6 @@ def download_tweets(search=None, profile=None, sleep=1):
 
     for tweet in parse_search_results(response.encode('utf8')):
         yield tweet
-        tweets += 1
 
     has_more_items = True
     while has_more_items:
@@ -43,7 +41,6 @@ def download_tweets(search=None, profile=None, sleep=1):
 
         for tweet in parse_search_results(response_dict['items_html'].encode('utf8')):
             yield tweet
-            tweets += 1
 
             if search:
                 has_more_items = True
