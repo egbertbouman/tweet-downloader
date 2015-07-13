@@ -83,7 +83,7 @@ def main(argv):
                 count += 1
                 sys.stdout.write('Fetched %d tweet(s)\r' % count)
                 sys.stdout.flush()
-        print 'Done!'
+        print '\nDone!'
 
 
     except Exception, e:
