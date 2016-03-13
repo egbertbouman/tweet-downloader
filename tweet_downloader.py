@@ -27,7 +27,7 @@ def find_value(html, key):
 def download_tweets(search=None, profile=None, sleep=1):
     assert search or profile
 
-    term = (search or profile)
+    term = urllib.quote_plus(search or profile)
     url = TWITTER_SEARCH_URL if search else TWITTER_PROFILE_URL
     url_more = TWITTER_SEARCH_MORE_URL if search else TWITTER_PROFILE_MORE_URL
 
